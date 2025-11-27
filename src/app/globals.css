@@ -1,26 +1,93 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Color Tokens */
+  --color-primary: #ff7a3b;
+  --color-secondary: #ed991d;
+  --color-accent: #095d5d;
+  
+  /* Dark Theme */
+  --color-dark: #0d0d0d;
+  --color-dark-lighter: #1a1a1a;
+  
+  /* White Variations */
+  --color-white-10: rgba(255, 255, 255, 0.1);
+  --color-white-15: rgba(255, 255, 255, 0.15);
+  --color-white-30: rgba(255, 255, 255, 0.3);
+  --color-white-50: rgba(255, 255, 255, 0.5);
+  --color-white-80: rgba(255, 255, 255, 0.8);
+  
+  /* Font Families */
+  --font-syne: var(--font-syne-family);
+  --font-inter: var(--font-inter-family);
+  --font-satoshi: var(--font-satoshi-family);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-primary: var(--color-primary);
+  --color-secondary: var(--color-secondary);
+  --color-accent: var(--color-accent);
+  --color-dark*: var(--color-dark);
+  --color-dark-lighter: var(--color-dark-lighter);
+  
+  /* White color variations */
+  --color-white-10: var(--color-white-10);
+  --color-white-15: var(--color-white-15);
+  --color-white-30: var(--color-white-30);
+  --color-white-50: var(--color-white-50);
+  --color-white-80: var(--color-white-80);
+  
+  /* Font families */
+  --font-family-syne: var(--font-syne);
+  --font-family-inter: var(--font-inter);
+  --font-family-satoshi: var(--font-satoshi);
+  
+  /* Border radius values */
+  --radius-4xl: 2rem;
+  --radius-5xl: 2.5rem;
+  --radius-6xl: 3rem;
+  --radius-20: 5rem;
+  
+  /* Backdrop blur values */
+  --blur-xs: 2px;
+  --blur-sm: 4px;
+  --blur-md: 12px;
+  --blur-lg: 19px;
+  --blur-xl: 24px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-dark);
+  color: white;
+  font-family: var(--font-inter), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-dark-lighter);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-white-30);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-white-50);
 }
