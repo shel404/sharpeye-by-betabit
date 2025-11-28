@@ -1,34 +1,58 @@
-import VideoPlayer from '@/components/ui/VideoPlayer'
+"use client";
+
+import { motion } from "framer-motion";
+import VideoPlayer from "@/components/ui/VideoPlayer";
 
 export default function ShowreelSection() {
   return (
-    <section className="py-20 px-6">
+    <section className="py-20 px-6" id="showreel">
       <div className="container mx-auto max-w-6xl">
         {/* Section Header */}
-        <div className="text-center mb-12">
-          <h2 className="font-[family-name:var(--font-syne)] text-4xl md:text-5xl font-bold text-white mb-4">
-            <span
-              className="bg-gradient-to-r from-white via-white to-transparent bg-clip-text text-transparent"
-            >
-              Watch Our Showreel
+        <motion.div
+          className="text-center mb-12"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          viewport={{ once: true }}
+        >
+          <motion.h2
+            className="font-[family-name:var(--font-syne)] text-[80px] font-bold text-white mb-4 tracking-[-0.05em] leading-[1em]"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            viewport={{ once: true }}
+          >
+            <span className="bg-[linear-gradient(132deg,#ffffff_11.68%,rgba(0,0,0,0)_100%)] bg-clip-text text-transparent">
+              SHOWREEL
             </span>
-          </h2>
-          <p className="text-white/80 text-lg max-w-2xl mx-auto">
-            Experience our best work in action. See how we bring stories to life through stunning visuals and creative storytelling.
-          </p>
-        </div>
+          </motion.h2>
+        </motion.div>
 
         {/* Video Player Container */}
-        <div className="relative rounded-[30px] overflow-hidden border border-white/10 bg-white/5 backdrop-blur-sm p-2">
-          <div className="aspect-video rounded-[24px] overflow-hidden">
+        <motion.div
+          className="relative rounded-[104px] overflow-hidden bg-[rgba(255,255,255,0.16)] backdrop-blur-[5px] p-0"
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+          viewport={{ once: true }}
+          whileHover={{ scale: 1.02 }}
+        >
+          <div className="aspect-video overflow-hidden relative group cursor-pointer">
             <VideoPlayer
               src="/videos/showreel.mp4"
               poster="/images/hero-image.jpg"
               title="SharpEye Films Showreel 2024"
             />
+            
+            {/* Play Button Overlay */}
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+               <div className="bg-white/10 backdrop-blur-md rounded-full px-8 py-4 border border-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <span className="font-[family-name:var(--font-syne)] font-bold text-white tracking-wider">PLAY SHOWREEL</span>
+               </div>
+            </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
-  )
+  );
 }

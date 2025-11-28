@@ -1,17 +1,17 @@
-import FAQSection from '@/components/sections/FAQSection'
-import SlidingServices from '@/components/sections/SlidingServices'
-import Link from 'next/link'
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa'
+import FAQSection from "@/components/sections/FAQSection";
+import SlidingServices from "@/components/sections/SlidingServices";
+import Link from "next/link";
+import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 export default function Footer() {
   return (
     <footer className="bg-[var(--color-dark)]">
       {/* 1. FAQ Section */}
       <FAQSection />
-      
+
       {/* 2. Auto-Sliding Services Container */}
       <SlidingServices />
-      
+
       {/* 3. Main Footer */}
       <div className="container mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
@@ -45,6 +45,12 @@ export default function Footer() {
                 Projects
               </Link>
               <Link
+                href="/photo-albums"
+                className="text-white/80 hover:text-white transition-colors text-sm"
+              >
+                Gallery
+              </Link>
+              <Link
                 href="/blogs"
                 className="text-white/80 hover:text-white transition-colors text-sm"
               >
@@ -58,7 +64,7 @@ export default function Footer() {
               </Link>
             </nav>
           </div>
-          
+
           <div>
             <h4 className="font-[family-name:var(--font-syne)] font-semibold text-white mb-4 text-lg">
               Legal
@@ -84,7 +90,7 @@ export default function Footer() {
               </Link>
             </nav>
           </div>
-          
+
           <div>
             <h4 className="font-[family-name:var(--font-syne)] font-semibold text-white mb-4 text-lg">
               Social Media
@@ -120,7 +126,7 @@ export default function Footer() {
               </a>
             </div>
           </div>
-          
+
           <div>
             <p className="text-white/50 text-sm">
               © 2024 SharpEye Films.
@@ -131,5 +137,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }

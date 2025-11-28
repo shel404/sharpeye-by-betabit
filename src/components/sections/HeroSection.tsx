@@ -11,9 +11,9 @@ export default function HeroSection() {
         <img 
           src="/images/hero-bg.jpg" 
           alt="Background" 
-          className="w-full h-full object-cover opacity-60"
+          className="w-full h-full object-cover brightness-[0.4] contrast-[1.48]"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[var(--color-dark)]/80 via-transparent to-[var(--color-dark)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(13,13,13,0)_26.776%,#0d0d0d_100%)]" />
       </div>
       
       {/* Content */}
@@ -25,7 +25,7 @@ export default function HeroSection() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="flex flex-col items-center"
         >
-          <h1 className="font-[family-name:var(--font-syne)] text-5xl md:text-7xl lg:text-8xl font-bold mb-8 tracking-tight max-w-5xl leading-[1.1]">
+          <h1 className="font-[family-name:var(--font-syne)] text-[40px] md:text-[52px] lg:text-[70px] xl:text-[96px] font-bold mb-8 tracking-[-0.05em] max-w-5xl leading-[1em]">
             <span
               className="bg-clip-text text-transparent"
               style={{
@@ -38,7 +38,7 @@ export default function HeroSection() {
             </span>
           </h1>
           
-          <p className="text-white/80 text-lg md:text-xl max-w-2xl mx-auto mb-12 font-[family-name:var(--font-syne)] font-medium text-center">
+          <p className="text-white/80 text-[16px] md:text-[20px] max-w-2xl mx-auto mb-12 font-normal tracking-[-0.02em] leading-[1.5em] text-center">
             We're your friendly video wizards creating fantastic commercials, corporate videos, social ads and many more.
           </p>
           
