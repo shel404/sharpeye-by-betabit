@@ -5,8 +5,12 @@ import dynamic from "next/dynamic";
 import { useMemo } from "react";
 
 // Dynamically import the Framer navbar to avoid SSR issues
+// Using Responsive variant for automatic breakpoint handling
 const FramerNavBar = dynamic(
-  () => import("../../../framer/nav-bar.jsx").then((mod) => mod.default),
+  () =>
+    import("../../../framer/nav-bar.jsx").then(
+      (mod) => mod.default.Responsive || mod.default
+    ),
   {
     ssr: false,
     loading: () => (
@@ -16,7 +20,10 @@ const FramerNavBar = dynamic(
 );
 
 // Map Next.js routes to Framer activePage prop
-const routeToActivePage: Record<string, "Home" | "Projects" | "Albums" | "About" | "Contact us" | "Services" | "Blogs"> = {
+const routeToActivePage: Record<
+  string,
+  "Home" | "Projects" | "Albums" | "About" | "Contact us" | "Services" | "Blogs"
+> = {
   "/": "Home",
   "/projects": "Projects",
   "/photo-albums": "Albums",
@@ -52,9 +59,10 @@ export default function FramerNavbar() {
   }, [pathname]);
 
   return (
-    <div className="fixed top-0 left-1/2 -translate-x-1/2 z-50 w-full max-w-[1520px] flex justify-center">
-      <FramerNavBar activePage={activePage} />
+    <div className="fixed top-0 left-0 right-0 z-50 w-full framer-navbar-wrapper">
+      <div className="w-full max-w-[1520px] mx-auto px-4 sm:px-6 md:px-8 flex justify-center">
+        <FramerNavBar activePage={activePage} />
+      </div>
     </div>
   );
 }
-

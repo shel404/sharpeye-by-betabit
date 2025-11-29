@@ -6,18 +6,18 @@
   --color-primary: #ff7a3b;
   --color-secondary: #ed991d;
   --color-accent: #095d5d;
-  
+
   /* Dark Theme */
   --color-dark: #0d0d0d;
   --color-dark-lighter: #1a1a1a;
-  
+
   /* White Variations */
   --color-white-10: rgba(255, 255, 255, 0.1);
   --color-white-15: rgba(255, 255, 255, 0.15);
   --color-white-30: rgba(255, 255, 255, 0.3);
   --color-white-50: rgba(255, 255, 255, 0.5);
   --color-white-80: rgba(255, 255, 255, 0.8);
-  
+
   /* Font Families */
   --font-syne: var(--font-syne-family);
   --font-inter: var(--font-inter-family);
@@ -30,25 +30,25 @@
   --color-accent: var(--color-accent);
   --color-dark*: var(--color-dark);
   --color-dark-lighter: var(--color-dark-lighter);
-  
+
   /* White color variations */
   --color-white-10: var(--color-white-10);
   --color-white-15: var(--color-white-15);
   --color-white-30: var(--color-white-30);
   --color-white-50: var(--color-white-50);
   --color-white-80: var(--color-white-80);
-  
+
   /* Font families */
   --font-family-syne: var(--font-syne);
   --font-family-inter: var(--font-inter);
   --font-family-satoshi: var(--font-satoshi);
-  
+
   /* Border radius values */
   --radius-4xl: 2rem;
   --radius-5xl: 2.5rem;
   --radius-6xl: 3rem;
   --radius-20: 5rem;
-  
+
   /* Backdrop blur values */
   --blur-xs: 2px;
   --blur-sm: 4px;
@@ -91,4 +91,172 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-white-50);
+}
+
+/* Framer Navbar Responsive Override - Horizontally Centered on All Devices */
+.framer-navbar-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.framer-navbar-wrapper nav,
+.framer-navbar-wrapper > * {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* Target all navbar variants */
+.framer-navbar-wrapper .framer-cHTk3,
+.framer-navbar-wrapper .framer-cHTk3.framer-x6w4f6,
+.framer-navbar-wrapper .framer-cHTk3.framer-v-1cqcnro,
+.framer-navbar-wrapper .framer-cHTk3.framer-v-19w1zt3 {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 auto !important;
+}
+
+/* Desktop: max-width 1520px, centered */
+@media (min-width: 1200px) {
+  .framer-navbar-wrapper .framer-cHTk3.framer-x6w4f6 {
+    width: 100% !important;
+    max-width: 1520px !important;
+    margin: 0 auto !important;
+  }
+}
+
+/* Tablet and below: full width, centered */
+@media (max-width: 1199px) {
+  .framer-navbar-wrapper .framer-cHTk3,
+  .framer-navbar-wrapper .framer-cHTk3.framer-x6w4f6,
+  .framer-navbar-wrapper .framer-cHTk3.framer-v-1cqcnro,
+  .framer-navbar-wrapper .framer-cHTk3.framer-v-19w1zt3 {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+  }
+}
+
+/* Mobile: ensure proper width, padding, and centering */
+@media (max-width: 768px) {
+  .framer-navbar-wrapper .framer-cHTk3,
+  .framer-navbar-wrapper .framer-cHTk3.framer-x6w4f6,
+  .framer-navbar-wrapper .framer-cHTk3.framer-v-1cqcnro,
+  .framer-navbar-wrapper .framer-cHTk3.framer-v-19w1zt3 {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+
+  /* Ensure inner containers are responsive and centered */
+  .framer-navbar-wrapper .framer-dhnnu0 {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+  }
+}
+
+/* Framer Hero Full Width and Full Height Override */
+.framer-hero-wrapper {
+  width: 100% !important;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.framer-hero-wrapper section,
+.framer-hero-wrapper > * {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* Target the main hero container */
+.framer-hero-wrapper .framer-5cCe1,
+.framer-hero-wrapper .framer-5cCe1.framer-1k90wli {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-height: 100vh !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Ensure all nested containers are full width */
+.framer-hero-wrapper .framer-5cCe1 > * {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* Background image container */
+.framer-hero-wrapper .framer-19i89s5 {
+  width: 100% !important;
+  left: 0 !important;
+  right: 0 !important;
+}
+
+/* Content container */
+.framer-hero-wrapper .framer-1tdk418 {
+  width: 100% !important;
+  max-width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Text containers */
+.framer-hero-wrapper .framer-zpq2ca {
+  max-width: 100% !important;
+  width: 100% !important;
+  text-align: center !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.framer-hero-wrapper .framer-z7wfzx {
+  max-width: 100% !important;
+  width: 100% !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin: 0 auto !important;
+  text-align: center !important;
+}
+
+/* Button container - center it */
+.framer-hero-wrapper .framer-o5qlel-container {
+  margin: 0 auto !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  position: relative !important;
+  left: auto !important;
+  right: auto !important;
+}
+
+/* Ensure hero content is responsive */
+@media (max-width: 768px) {
+  .framer-hero-wrapper .framer-5cCe1,
+  .framer-hero-wrapper .framer-5cCe1.framer-1k90wli {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    height: auto !important;
+    min-height: 100vh !important;
+    width: 100% !important;
+  }
+
+  .framer-hero-wrapper .framer-zpq2ca {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 0 10px !important;
+  }
+
+  .framer-hero-wrapper .framer-z7wfzx {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 0 10px !important;
+  }
 }
