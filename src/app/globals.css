@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "../../framer/styles.css";
 
 :root {
   /* Color Tokens */
