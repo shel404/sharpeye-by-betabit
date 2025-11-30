@@ -1,5 +1,6 @@
 import { generateSEOMetadata } from "@/lib/metadata";
 import CinematicScrollContainer from "@/components/sections/CinematicScrollContainer";
+import BrandPartnersSection from "@/components/sections/BrandPartnersSection";
 import ServicesGrid from "@/components/sections/ServicesGrid";
 import ProjectsGrid from "@/components/sections/ProjectsGrid";
 import FAQSection from "@/components/sections/FAQSection";
@@ -16,6 +17,9 @@ export default function HomePage() {
     <div>
       {/* Cinematic Scroll Container - Hero and Showreel with scroll animations */}
       <CinematicScrollContainer />
+
+      {/* Brand Partners Section */}
+      <BrandPartnersSection />
 
       {/* Services Section */}
       <ServicesGrid />
