@@ -36,19 +36,19 @@ export default function CinematicScrollContainer() {
     gsap.set(hero, { scale: 1, opacity: 1, zIndex: 1 });
     gsap.set(showreel, { y: "100vh", opacity: 0, zIndex: 10 });
 
-    // PHASE 1: Hero scales down and fades (0% - 60%)
+    // PHASE 1: Hero scales down and fades (0% - 50%)
     mainTl.to(
       hero,
       {
         scale: 0.8,
         opacity: 0.3,
-        duration: 0.6,
+        duration: 0.5,
         ease: "power2.out",
       },
       0
     );
 
-    // PHASE 2: Showreel slides up and overlaps hero (20% - 60%)
+    // PHASE 2: Showreel slides up and overlaps hero (5% - 45%) - Much earlier!
     mainTl.to(
       showreel,
       {
@@ -57,7 +57,7 @@ export default function CinematicScrollContainer() {
         duration: 0.4,
         ease: "power2.out",
       },
-      0.2
+      0.05 // Changed from 0.2 to 0.05 - showreel appears much earlier
     );
 
     // Wait for Framer elements to load and animate them
@@ -92,19 +92,56 @@ export default function CinematicScrollContainer() {
       }
 
       if (videoElement) {
-        // Set initial state for video - visible immediately, moderately small
-        gsap.set(videoElement, { opacity: 1, scale: 0.4, zIndex: 20 });
+        // Disable Framer's built-in scroll transforms first
+        videoElement.style.setProperty("transform", "scale(0.3)", "important");
+        videoElement.style.setProperty("animation", "none", "important");
+        videoElement.style.setProperty("transition", "none", "important");
 
-        // PHASE 3: Video scales up gradually with scroll (50% - 90%)
+        // Set initial state for video - start moderately small, under the text
+        gsap.set(videoElement, {
+          opacity: 1,
+          scale: 0.3, // Larger initial scale - more visible
+          zIndex: 20,
+          transformOrigin: "center center",
+          force3D: true,
+        });
+
+        // PHASE 3: Video scales up gradually and smoothly with scroll (25% - 80%)
         mainTl.to(
           videoElement,
           {
-            scale: 1.1, // Scale up for cinematic effect
-            duration: 0.4,
-            ease: "power2.out",
+            scale: 1.0, // Scale up to normal size
+            duration: 0.55, // Longer duration for smoother animation
+            ease: "power1.inOut", // Smoother easing
+            force3D: true,
+            transformOrigin: "center center",
+            onUpdate: function () {
+              // Force override any Framer transforms during animation
+              const currentScale = gsap.getProperty(videoElement, "scale");
+              videoElement.style.setProperty(
+                "transform",
+                `scale(${currentScale})`,
+                "important"
+              );
+            },
           },
-          0.5
+          0.25 // Start scaling after showreel text is visible
         );
+
+        // Continuously override Framer transforms
+        const overrideFramerTransforms = () => {
+          if (videoElement) {
+            const currentScale = gsap.getProperty(videoElement, "scale") || 0.3;
+            videoElement.style.setProperty(
+              "transform",
+              `scale(${currentScale})`,
+              "important"
+            );
+          }
+        };
+
+        // Override transforms every frame
+        gsap.ticker.add(overrideFramerTransforms);
       }
 
       // If elements not found, retry
@@ -147,6 +184,26 @@ export default function CinematicScrollContainer() {
           <FramerShowreelSection />
         </div>
       </div>
+
+      {/* Override Framer transforms and fix video styling */}
+      <style jsx global>{`
+        .framer-tpvi5m {
+          animation: none !important;
+          transition: none !important;
+          border-radius: 40px !important; /* Ensure proper rounded rectangle, not circle */
+        }
+
+        /* Disable Framer's scroll-based transforms */
+        .framer-tpvi5m[style*="transform"] {
+          transform: scale(0.3) !important;
+        }
+
+        /* Fix video container border radius */
+        .framer-19exss5-container,
+        .framer-19exss5-container video {
+          border-radius: 40px !important;
+        }
+      `}</style>
     </div>
   );
 }
