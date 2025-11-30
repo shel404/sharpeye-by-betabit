@@ -1,6 +1,5 @@
 import { generateSEOMetadata } from "@/lib/metadata";
-import HeroSection from "@/components/sections/HeroSection";
-import ShowreelSection from "@/components/sections/ShowreelSection";
+import CinematicScrollContainer from "@/components/sections/CinematicScrollContainer";
 import ServicesGrid from "@/components/sections/ServicesGrid";
 import ProjectsGrid from "@/components/sections/ProjectsGrid";
 import FAQSection from "@/components/sections/FAQSection";
@@ -14,12 +13,9 @@ export const metadata = generateSEOMetadata({
 
 export default function HomePage() {
   return (
-    <div className="pt-20">
-      {/* Hero Section */}
-      <HeroSection />
-
-      {/* Showreel Section */}
-      <ShowreelSection />
+    <div>
+      {/* Cinematic Scroll Container - Hero and Showreel with scroll animations */}
+      <CinematicScrollContainer />
 
       {/* Services Section */}
       <ServicesGrid />
