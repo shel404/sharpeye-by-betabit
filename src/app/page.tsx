@@ -2,6 +2,7 @@ import { generateSEOMetadata } from "@/lib/metadata";
 import CinematicScrollContainer from "@/components/sections/CinematicScrollContainer";
 import BrandPartnersSection from "@/components/sections/BrandPartnersSection";
 import PortfolioCarouselSection from "@/components/sections/PortfolioCarouselSection";
+import ServicesCardsSection from "@/components/sections/ServicesCardsSection";
 import ServicesGrid from "@/components/sections/ServicesGrid";
 import ProjectsGrid from "@/components/sections/ProjectsGrid";
 import FAQSection from "@/components/sections/FAQSection";
@@ -25,8 +26,8 @@ export default function HomePage() {
       {/* Portfolio Carousel Section - Scroll-based horizontal carousel */}
       <PortfolioCarouselSection />
 
-      {/* Services Section */}
-      <ServicesGrid />
+      {/* Services Cards Section - Interactive service cards */}
+      <ServicesCardsSection />
 
       {/* Featured Projects */}
       <ProjectsGrid />

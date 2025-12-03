@@ -88,9 +88,9 @@ function addPropertyOverrides(overrides, ...variants) {
 	variants === null || variants === void 0
 		? void 0
 		: variants.forEach(
-				(variant) =>
-					variant && Object.assign(nextOverrides, overrides[variant]),
-			);
+			(variant) =>
+				variant && Object.assign(nextOverrides, overrides[variant]),
+		);
 	return nextOverrides;
 }
 var transition1 = {
@@ -110,8 +110,8 @@ var toResponsiveImage = (value) => {
 	}
 	return typeof value === "string"
 		? {
-				src: value,
-			}
+			src: value,
+		}
 		: void 0;
 };
 var Transition = ({ value, children }) => {
@@ -163,10 +163,10 @@ var getProps = ({
 				null && _ref !== void 0
 				? _ref
 				: {
-						src: "https://framerusercontent.com/images/cU8i3FwPr0fkSH5zeivVz7Q3AY.jpg?scale-down-to=1024",
-						srcSet:
-							"https://framerusercontent.com/images/cU8i3FwPr0fkSH5zeivVz7Q3AY.jpg?scale-down-to=1024 682w,https://framerusercontent.com/images/cU8i3FwPr0fkSH5zeivVz7Q3AY.jpg?scale-down-to=2048 1365w,https://framerusercontent.com/images/cU8i3FwPr0fkSH5zeivVz7Q3AY.jpg 2334w",
-					},
+					src: "https://framerusercontent.com/images/cU8i3FwPr0fkSH5zeivVz7Q3AY.jpg?scale-down-to=1024",
+					srcSet:
+						"https://framerusercontent.com/images/cU8i3FwPr0fkSH5zeivVz7Q3AY.jpg?scale-down-to=1024 682w,https://framerusercontent.com/images/cU8i3FwPr0fkSH5zeivVz7Q3AY.jpg?scale-down-to=2048 1365w,https://framerusercontent.com/images/cU8i3FwPr0fkSH5zeivVz7Q3AY.jpg 2334w",
+				},
 		I43n4JqNq:
 			(_ref1 = row2 !== null && row2 !== void 0 ? row2 : props.I43n4JqNq) !==
 				null && _ref1 !== void 0
@@ -183,7 +183,7 @@ var getProps = ({
 			(_ref3 =
 				(_humanReadableVariantMap_props_variant =
 					humanReadableVariantMap[props.variant]) !== null &&
-				_humanReadableVariantMap_props_variant !== void 0
+					_humanReadableVariantMap_props_variant !== void 0
 					? _humanReadableVariantMap_props_variant
 					: props.variant) !== null && _ref3 !== void 0
 				? _ref3
@@ -311,6 +311,8 @@ var Component = /* @__PURE__ */ React.forwardRef(function (props, ref) {
 							borderBottomRightRadius: 30,
 							borderTopLeftRadius: 30,
 							borderTopRightRadius: 30,
+							width: "100%",
+							maxWidth: "100%",
 							...style,
 						}}
 						variants={{
@@ -636,72 +638,24 @@ var Component = /* @__PURE__ */ React.forwardRef(function (props, ref) {
 								WebkitBackdropFilter: "blur(5px)",
 							}}
 						>
-							<RichText
-								__fromCanvasComponent={true}
-								className={"framer-q9a98g"}
-								fonts={["Inter"]}
-								layoutDependency={layoutDependency}
-								layoutId={"ojKptD9Sg"}
-								style={{
-									"--extracted-r6o4lv":
-										"var(--token-a3567fc0-2c6f-4fa8-ac8f-89ddd158e98d, rgb(255, 255, 255))",
-									"--framer-link-text-color": "rgb(0, 153, 255)",
-									"--framer-link-text-decoration": "underline",
-								}}
-								verticalAlignment={"top"}
-								withExternalLayout={true}
-								{...addPropertyOverrides(
-									{
-										i3OUhIoZi: {
-											children: (
-												<React.Fragment>
-													<motion.p
-														className={"framer-styles-preset-5vsgqx"}
-														data-styles-preset={"urlDCZwpF"}
-														style={{
-															"--framer-text-color":
-																"var(--extracted-r6o4lv, var(--token-a3567fc0-2c6f-4fa8-ac8f-89ddd158e98d, rgb(255, 255, 255)))",
-														}}
-													>
-														{"Learn More"}
-													</motion.p>
-												</React.Fragment>
-											),
-										},
-										M4x0ZduiV: {
-											children: (
-												<React.Fragment>
-													<motion.p
-														className={"framer-styles-preset-5vsgqx"}
-														data-styles-preset={"urlDCZwpF"}
-														style={{
-															"--framer-text-color":
-																"var(--extracted-r6o4lv, var(--token-a3567fc0-2c6f-4fa8-ac8f-89ddd158e98d, rgb(255, 255, 255)))",
-														}}
-													>
-														{"Learn More"}
-													</motion.p>
-												</React.Fragment>
-											),
-										},
-									},
-									baseVariant,
-									gestureVariant,
-								)}
-							>
-								<React.Fragment>
-									<motion.p
-										className={"framer-styles-preset-5vsgqx"}
-										data-styles-preset={"urlDCZwpF"}
-										style={{
-											"--framer-text-color":
-												"var(--extracted-r6o4lv, var(--token-a3567fc0-2c6f-4fa8-ac8f-89ddd158e98d, rgb(255, 255, 255)))",
-										}}
-									>
-										{"Hide details"}
-									</motion.p>
-								</React.Fragment>
-							</RichText>
+							<div className={"framer-q9a98g"} style={{
+								"--extracted-r6o4lv": "var(--token-a3567fc0-2c6f-4fa8-ac8f-89ddd158e98d, rgb(255, 255, 255))",
+								flex: "none",
+								height: "auto",
+								position: "relative",
+								whiteSpace: "pre",
+								width: "auto",
+							}}>
+								<motion.p
+									className={"framer-styles-preset-5vsgqx"}
+									data-styles-preset={"urlDCZwpF"}
+									style={{
+										"--framer-text-color": "var(--extracted-r6o4lv, var(--token-a3567fc0-2c6f-4fa8-ac8f-89ddd158e98d, rgb(255, 255, 255)))",
+									}}
+								>
+									{baseVariant === "NvSY0AjTO" || baseVariant === "YR7CuyKoH" ? "Hide details" : "Learn More"}
+								</motion.p>
+							</div>
 							<ComponentViewportProvider>
 								<motion.div
 									className={"framer-4xy95o-container"}
@@ -784,7 +738,7 @@ var Component = /* @__PURE__ */ React.forwardRef(function (props, ref) {
 var css4 = [
 	"@supports (aspect-ratio: 1) { body { --framer-aspect-ratio-supported: auto; } }",
 	".framer-EpPDH.framer-xxlfh1, .framer-EpPDH .framer-xxlfh1 { display: block; }",
-	".framer-EpPDH.framer-pxhdii { align-content: flex-start; align-items: flex-start; cursor: pointer; display: flex; flex-direction: column; flex-wrap: nowrap; gap: 21px; height: min-content; justify-content: center; overflow: visible; padding: 40px; position: relative; width: 750px; }",
+	".framer-EpPDH.framer-pxhdii { align-content: flex-start; align-items: flex-start; cursor: pointer; display: flex; flex-direction: column; flex-wrap: nowrap; gap: 21px; height: min-content; justify-content: center; overflow: visible; padding: 40px; position: relative; width: 100%; max-width: 100%; }",
 	".framer-EpPDH .framer-16szu7u { align-content: center; align-items: center; bottom: -1px; display: flex; flex: none; flex-direction: column; flex-wrap: nowrap; gap: 10px; height: 100%; justify-content: center; left: -290px; overflow: visible; padding: 0px; pointer-events: none; position: absolute; width: 254px; z-index: 1; }",
 	".framer-EpPDH .framer-d64ho6 { flex: none; height: 100%; left: calc(50.14164305949011% - 100% / 2); mix-blend-mode: difference; overflow: visible; position: absolute; top: calc(50.12987012987015% - 100% / 2); width: 100%; z-index: 2; }",
 	".framer-EpPDH .framer-624c68 { -webkit-user-select: none; flex: none; height: auto; position: relative; user-select: none; white-space: pre-wrap; width: 100%; word-break: break-word; word-wrap: break-word; }",
@@ -814,7 +768,7 @@ var stdin_default = FramerIVozL5jyY;
 FramerIVozL5jyY.displayName = "Homepage - Service";
 FramerIVozL5jyY.defaultProps = {
 	height: 354,
-	width: 750,
+	width: "100%",
 };
 addPropertyControls(FramerIVozL5jyY, {
 	variant: {

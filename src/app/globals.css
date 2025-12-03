@@ -333,3 +333,70 @@ body {
   right: 0 !important;
   margin-bottom: 0.5rem !important; /* Small bottom margin */
 }
+
+/* ========================================
+   FRAMER HOMEPAGE SERVICE CARDS - FULL WIDTH FIX
+   ======================================== */
+
+/* Force all HomepageService card containers to take full width */
+.service-card-wrapper {
+  width: 100% !important;
+  display: block !important;
+}
+
+/* Target the main Framer component wrapper - override the 750px fixed width */
+.framer-EpPDH,
+.framer-EpPDH.framer-pxhdii,
+.framer-EpPDH.framer-v-1s6d1df,
+.framer-EpPDH.framer-v-lpc4rc,
+.framer-EpPDH.framer-v-1urtpzu {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 100% !important;
+}
+
+/* Target any child divs that might have fixed widths */
+.service-card-wrapper > div {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* Ensure the inner content respects the full width */
+.framer-EpPDH .framer-16szu7u {
+  /* Image wrapper - keep it positioned correctly but don't let it affect width */
+  pointer-events: none !important;
+}
+
+/* Make sure all variants (Collapsed, Expanded, Phone variants) respect full width */
+.framer-EpPDH[class*="framer-"] {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* Additional specificity for hover states */
+.framer-EpPDH.framer-v-1s6d1df.hover,
+.framer-EpPDH.framer-v-pxhdii.hover {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .framer-EpPDH,
+  .framer-EpPDH.framer-pxhdii,
+  .framer-EpPDH.framer-v-1s6d1df {
+    width: 100% !important;
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .framer-EpPDH,
+  .framer-EpPDH.framer-pxhdii,
+  .framer-EpPDH.framer-v-1s6d1df {
+    width: 100% !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+}
